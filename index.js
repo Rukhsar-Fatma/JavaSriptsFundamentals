@@ -106,6 +106,32 @@ const debounce = function (fn, d) {
     }
 }
 
-
-
 const betterFunction = debounce(getData, 300);
+
+//call, apply and bind method in JavaScript
+let name1 = {
+    firstname: "Rukhsar",
+    lastname: "Shaikh",
+}
+
+let printFullName = function (hometown,state) {
+    console.log(this.firstname + " " + this.lastname+" from "+hometown+", "+state);
+}
+
+//function borrowing
+printFullName.call(name1,"Kolkata","Bengal");
+
+let name2 = {
+    firstname: "Yoongi",
+    lastname: "Min",
+
+}
+
+printFullName.call(name2,"Deagu","South Korea");
+printFullName.apply(name2,["Deagu","South Korea"]);
+
+// Bind Method
+let printName=printFullName.bind(name1,"Kolkata","Bengal");
+printName();
+
+
