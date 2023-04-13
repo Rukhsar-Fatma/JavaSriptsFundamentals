@@ -93,7 +93,7 @@ const getData = () => {
     console.log("Fetch data", counter++);
 }
 
-//doSomething is here assign a function with 2 angr fn & d(delay) where it returns fn is the getData that being fetch and d with setTimeout of 300 so that it does not fetch the every single time while pressing a single letter it will hold for some sort of seconds then the debounce method will be called in index.html input feild
+//debounce is here assign a function with 2 angr fn & d(delay) where it returns fn is the getData that being fetch and d with setTimeout of 300 so that it does not fetch the every single time while pressing a single letter it will hold for some sort of seconds then the debounce method will be called in index.html input feild
 const debounce = function (fn, d) {
     let timer;
     return function () {
