@@ -135,3 +135,27 @@ let printName=printFullName.bind(name1,"Kolkata","Bengal");
 printName();
 
 
+//function statement aka function declaration
+function a(){
+    console.log("Function Statement")
+}
+a();
+
+//function expression
+var b=function(){
+    console.log("Function Expression");
+
+}
+b();
+
+//function anonymous
+// function (){
+
+// } note gives an error function stattements require a function name
+
+// names function expression
+var c=function xyz(){
+    console.log("Named Function Expression");
+}
+c();
+
