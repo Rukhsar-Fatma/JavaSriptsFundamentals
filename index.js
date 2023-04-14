@@ -114,12 +114,12 @@ let name1 = {
     lastname: "Shaikh",
 }
 
-let printFullName = function (hometown,state) {
-    console.log(this.firstname + " " + this.lastname+" from "+hometown+", "+state);
+let printFullName = function (hometown, state) {
+    console.log(this.firstname + " " + this.lastname + " from " + hometown + ", " + state);
 }
 
 //function borrowing
-printFullName.call(name1,"Kolkata","Bengal");
+printFullName.call(name1, "Kolkata", "Bengal");
 
 let name2 = {
     firstname: "Yoongi",
@@ -127,22 +127,22 @@ let name2 = {
 
 }
 
-printFullName.call(name2,"Deagu","South Korea");
-printFullName.apply(name2,["Deagu","South Korea"]);
+printFullName.call(name2, "Deagu", "South Korea");
+printFullName.apply(name2, ["Deagu", "South Korea"]);
 
 // Bind Method
-let printName=printFullName.bind(name1,"Kolkata","Bengal");
+let printName = printFullName.bind(name1, "Kolkata", "Bengal");
 printName();
 
 
 //function statement aka function declaration
-function a(){
+function a() {
     console.log("Function Statement")
 }
 a();
 
 //function expression
-var b=function(){
+var b = function () {
     console.log("Function Expression");
 
 }
@@ -153,9 +153,40 @@ b();
 
 // } note gives an error function stattements require a function name
 
-// names function expression
-var c=function xyz(){
+// names function expression 
+var c = function xyz() {
     console.log("Named Function Expression");
 }
 c();
+
+//first class functions
+var first = function (param1) {
+    return function xyz() {
+    }
+}
+console.log(first())
+
+//callback function
+setTimeout(function(){
+    console.log("timer")
+},5000);
+
+function x(y){
+    console.log("x");
+    y();
+}
+
+x(function y(){
+    console.log("y")
+});
+
+function attachEventListner(){
+    let count=0;
+    document.getElementById("clickMe")
+    .addEventListener("click",function xyz(){
+        console.log("button clicked",count++)
+    })
+}
+
+attachEventListner();
 
